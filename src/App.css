@@ -28,6 +28,61 @@
   color: #61dafb;
 }
 
+.flex-main {
+  display: flex;
+  background-color: #112d47;
+  width: 100%;
+  height: 100vh;
+}
+
+.flex-left {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-left: 30px;
+}
+
+.flex-right {
+  display: flex;
+  height: 600px;
+  width: 500px;
+  margin-right: 100px;
+  margin-left: 100px;
+  flex-grow: 1;
+  border-radius: 15px;
+  padding: 40px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  align-self: center;
+  flex-direction: column;
+  background-color: white;
+}
+
+.image-main {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.right-header {
+  align-self: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.right-flex-header {
+  align-self: left;
+  padding-left: 40px;
+}
+
+.form-input {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 300px;
+  border-radius: 15px;
+  outline: black;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: large;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
