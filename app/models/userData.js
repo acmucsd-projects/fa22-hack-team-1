@@ -39,8 +39,14 @@ var userDataSchema = new mongoose.Schema(
         birth_year: {
             type: Number,
             required: true,
-        }
+        },
+        roles: [
+            {
+              type: mongoose.Schema.Types.ObjectId,
+              ref: "Role"
+            }
+          ]
     }
 )
 
-modules.exports = mongoose.model('userData', userDataSchema, 'User Data');
+module.exports = mongoose.model('userData', userDataSchema, 'User Data');
