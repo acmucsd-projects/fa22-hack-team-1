@@ -18,7 +18,7 @@ class Login extends Component {
           <h1 class="right-header"> Welcome to UCSD Gym Bros</h1>
           <form>
             <label class="form-header" for="username">
-              Username:
+              <b>Username or Email:</b>
             </label>
             <br />
             <input
@@ -30,7 +30,7 @@ class Login extends Component {
             <br />
             <br />
             <label class="form-header" for="password">
-              Password:
+              <b>Password:</b>
             </label>
             <br />
             <input
@@ -40,9 +40,19 @@ class Login extends Component {
               name="password"
             />
             <br />
+            <p>
+              <a class="forgot-pass" href="https://www.w3schools.com/">
+                Forgot Password
+              </a>
+            </p>
             <br />
             <br />
-            <input type="submit" value="Submit" />
+            <input class="login-button" type="submit" value="Submit" />
+            <input
+              class="create-acc-button"
+              type="submit"
+              value="Create Account"
+            />
           </form>
         </div>
       </div>
