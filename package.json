@@ -4,7 +4,9 @@
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^6.7.1"
+    "mongoose": "^6.7.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "name": "fa22-hack-team-1",
   "description": "Template for building projects with the MERN (MongoDB, Express, React, Node.js) stack.\r This template was generated using `create-react-app` and `express-generator` for the\r client and server, respectively.",

@@ -1,0 +1,126 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.flex-main {
+  display: flex;
+  background-color: #112d47;
+  width: 100%;
+  height: 100vh;
+}
+
+.flex-left {
+  display: flex;
+  flex-direction: column;
+  margin-left: 70px;
+}
+
+.flex-right {
+  display: flex;
+  height: 600px;
+  width: 500px;
+  margin-right: 100px;
+  margin-left: 100px;
+  flex-grow: 1;
+  border-radius: 15px;
+  padding: 40px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  align-self: center;
+  flex-direction: column;
+  background-color: white;
+}
+
+.image-main {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.right-header {
+  align-self: center;
+  text-align: center;
+  padding: 40px;
+}
+
+.right-flex-header {
+  align-self: left;
+  padding-left: 40px;
+}
+
+.form-input {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  width: 300px;
+  border-radius: 15px;
+  outline: black;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: large;
+}
+
+.forgot-pass {
+  padding-left: 210px;
+  font-size: small;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.login-button {
+  margin-left: 25px;
+  padding: 5px 10px;
+  background: #ccc;
+  border: 0 none;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  width: 250px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bold;
+}
+
+.create-acc-button {
+  margin-top: 20px;
+  margin-left: 25px;
+  padding: 5px 10px;
+  background: #ccc;
+  border: 0 none;
+  cursor: pointer;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  width: 250px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-weight: bold;
+  background-color: cadetblue;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
