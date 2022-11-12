@@ -47,7 +47,7 @@ class Login extends Component {
             </p>
             <br />
             <br />
-            <input class="login-button" type="submit" value="Submit" onClick={function1}/>
+            <input class="login-button" type="submit" value="Submit" />
             <input
               class="create-acc-button"
               type="submit"
