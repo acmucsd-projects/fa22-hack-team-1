@@ -47,12 +47,16 @@ class Login extends Component {
             </p>
             <br />
             <br />
+<<<<<<< Updated upstream
             <input class="login-button" type="submit" value="Submit" />
+=======
+            {/* <input class="login-button" type="submit" value="Submit" onClick={function1}/>
+>>>>>>> Stashed changes
             <input
               class="create-acc-button"
               type="submit"
               value="Create Account"
-            />
+            /> */}
           </form>
         </div>
       </div>
