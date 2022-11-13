@@ -4,11 +4,11 @@ var userDataSchema = new mongoose.Schema(
     {
         first_name: {
             type: String,
-            required: true,
+            required: false,
         },
         last_name: {
             type: String,
-            required: true,
+            required: false,
         },
         email: {
             type: String,
@@ -26,7 +26,7 @@ var userDataSchema = new mongoose.Schema(
         },
         gender: {
             type: String,
-            required: true,
+            required: false,
         },
         height: {
             type: String,
@@ -38,7 +38,7 @@ var userDataSchema = new mongoose.Schema(
         },
         birth_year: {
             type: Number,
-            required: true,
+            required: false,
         },
         roles: [
             {
