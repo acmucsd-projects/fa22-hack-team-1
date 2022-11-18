@@ -16,7 +16,7 @@ class Login extends Component {
         </div>
         <div class="flex-right">
           <h1 class="right-header"> Welcome to UCSD Gym Bros</h1>
-          <form>
+          <form action="http://localhost:8080/api/auth/signup" method="POST">
             <label class="form-header" for="username">
               <b>Username or Email:</b>
             </label>
@@ -47,16 +47,7 @@ class Login extends Component {
             </p>
             <br />
             <br />
-<<<<<<< Updated upstream
             <input class="login-button" type="submit" value="Submit" />
-=======
-            {/* <input class="login-button" type="submit" value="Submit" onClick={function1}/>
->>>>>>> Stashed changes
-            <input
-              class="create-acc-button"
-              type="submit"
-              value="Create Account"
-            /> */}
           </form>
         </div>
       </div>
