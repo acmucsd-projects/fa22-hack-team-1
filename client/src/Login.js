@@ -14,8 +14,8 @@ export default function Login() {
 
   const vplogin = () => {
     //If user entered correct credentials
-    //console.log("Please");
-    //navigate("./HomePage");
+    console.log("Please");
+    navigate("./HomePage");
   };
 
   return (
@@ -29,7 +29,7 @@ export default function Login() {
       </div>
       <div className="flex-right">
         <h1 className="right-header"> Welcome to UCSD Gym Bros</h1>
-        <form action="http://localhost:8080/api/auth/signup" method="POST">
+        <form>
           <label className="form-header" for="username">
             <b>Username or Email:</b>
           </label>
