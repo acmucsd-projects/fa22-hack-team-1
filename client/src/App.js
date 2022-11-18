@@ -1,53 +1,18 @@
-import React, { Component } from "react";
-import "./Login.css";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Login from "./Login";
+import HomePage from "./HomePage";
 
-class Login extends Component {
-  state = {};
-
-  render() {
-    return (
-      <div class="flex-main">
-        <div class="flex-left">
-          <img
-            class="image-main"
-            src={require("./images/rec.png")}
-            alt="You'll Just Have to Imagine the Fire"
-          />
-        </div>
-        <div class="flex-right">
-          <h1 class="right-header"> Welcome to UCSD Gym Bros</h1>
-          <form>
-            <label class="form-header" for="username">
-              Username:
-            </label>
-            <br />
-            <input
-              class="form-input"
-              type="text"
-              id="username"
-              name="username"
-            />
-            <br />
-            <br />
-            <label class="form-header" for="password">
-              Password:
-            </label>
-            <br />
-            <input
-              class="form-input"
-              type="password"
-              id="password"
-              name="password"
-            />
-            <br />
-            <br />
-            <br />
-            <input type="submit" value="Submit" />
-          </form>
-        </div>
-      </div>
-    );
-  }
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<Login />} />
+        <Route exact path="/Login" element={<Login />} />
+        <Route exact path="/Homepage" element={<HomePage />} />
+      </Routes>
+    </Router>
+  );
 }
-
-export default Login;
+export default App;
