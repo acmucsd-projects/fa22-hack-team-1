@@ -7,15 +7,17 @@ import {
   Link,
 } from "react-router-dom";
 import "./Login.css";
-import HomePage from "./HomePage";
 
 export default function Login() {
   const navigate = useNavigate();
 
   const vplogin = () => {
     //If user entered correct credentials
-    console.log("Please");
-    navigate("./HomePage");
+    navigate("../HomePage");
+  };
+
+  const cacc = () => {
+    navigate("../CreateUser");
   };
 
   return (
@@ -29,7 +31,7 @@ export default function Login() {
       </div>
       <div className="flex-right">
         <h1 className="right-header"> Welcome to UCSD Gym Bros</h1>
-        <form>
+        <form action="http://localhost:8080/api/auth/signup" method="POST">
           <label className="form-header" for="username">
             <b>Username or Email:</b>
           </label>
@@ -70,6 +72,7 @@ export default function Login() {
             className="create-acc-button"
             type="submit"
             value="Create Account"
+            onClick={cacc}
           />
         </form>
       </div>
