@@ -31,7 +31,7 @@ export default function Login() {
       </div>
       <div className="flex-right">
         <h1 className="right-header"> Welcome to UCSD Gym Bros</h1>
-        <form action="http://localhost:8080/api/auth/signup" method="POST">
+        <form action="http://localhost:8080/api/auth/signin" method="POST">
           <label className="form-header" for="username">
             <b>Username or Email:</b>
           </label>
@@ -66,7 +66,7 @@ export default function Login() {
             className="login-button"
             type="submit"
             value="Submit"
-            onClick={vplogin}
+            //onClick={vplogin}
           />
           <input
             className="create-acc-button"
