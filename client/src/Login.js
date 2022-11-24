@@ -6,14 +6,33 @@ import {
   Route,
   Link,
 } from "react-router-dom";
+import axios from "axios";
 import "./Login.css";
 
 export default function Login() {
   const navigate = useNavigate();
+  axios.defaults.headers.post["Content-Type"] =
+    "application/x-www-form-urlencoded";
+  axios.defaults.withCredentials = false;
 
   const vplogin = () => {
-    //If user entered correct credentials
-    navigate("../HomePage");
+    const res = axios
+      .post("http://localhost:8080/api/auth/signin", {
+        username: "a",
+        password: "a",
+      })
+      .then((response) => {
+        console.log("ACCESS TOKEN: ", response.data.accessToken);
+        //Display different content for different access tokens
+
+        //For default users
+        navigate("../HomePage");
+      })
+      .catch((error) => {
+        if (error.response) {
+          console.log(error.response);
+        }
+      });
   };
 
   const cacc = () => {
@@ -62,12 +81,9 @@ export default function Login() {
           </p>
           <br />
           <br />
-          <input
-            className="login-button"
-            type="submit"
-            value="Submit"
-            //onClick={vplogin}
-          />
+          <button className="login-button" type="button" onClick={vplogin}>
+            Submit
+          </button>
           <input
             className="create-acc-button"
             type="submit"
