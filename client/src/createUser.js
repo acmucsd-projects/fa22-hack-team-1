@@ -33,7 +33,7 @@ export default function CreateUser() {
         //Display different content for different access tokens
 
         //For default users
-        navigate("../HomePage");
+        navigate("../Login");
       })
       .catch((error) => {
         if (error.response) {
