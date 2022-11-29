@@ -12,13 +12,6 @@ import "./CreateUser.css";
 export default function CreateUser() {
   const navigate = useNavigate();
 
-  //const newUser = () => {
-  //const res = axios.post("http://localhost:8080/api/auth/signup", {
-  //  username: "a",
-  //  password: "a",
-  //});
-  //};
-
   const newUser = (event) => {
     event.preventDefault();
 

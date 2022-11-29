@@ -15,11 +15,16 @@ export default function Login() {
     "application/x-www-form-urlencoded";
   axios.defaults.withCredentials = false;
 
-  const vplogin = () => {
+  const vplogin = (event) => {
+    event.preventDefault();
+
+    console.log("Username:", event.target.username.value);
+    console.log("Password:", event.target.password.value);
+
     const res = axios
       .post("http://localhost:8080/api/auth/signin", {
-        username: "a",
-        password: "a",
+        username: event.target.username.value,
+        password: event.target.password.value,
       })
       .then((response) => {
         console.log("ACCESS TOKEN: ", response.data.accessToken);
@@ -50,7 +55,7 @@ export default function Login() {
       </div>
       <div className="flex-right">
         <h1 className="right-header"> Welcome to UCSD Gym Bros</h1>
-        <form action="http://localhost:8080/api/auth/signin" method="POST">
+        <form onSubmit={vplogin}>
           <label className="form-header" for="username">
             <b>Username or Email:</b>
           </label>
@@ -81,12 +86,12 @@ export default function Login() {
           </p>
           <br />
           <br />
-          <button className="login-button" type="button" onClick={vplogin}>
+          <button className="login-button" type="submit">
             Submit
           </button>
           <input
             className="create-acc-button"
-            type="submit"
+            type="button"
             value="Create Account"
             onClick={cacc}
           />
