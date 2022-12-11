@@ -6,14 +6,38 @@ import {
   Route,
   Link,
 } from "react-router-dom";
+import axios from "axios";
 import "./Login.css";
 
 export default function Login() {
   const navigate = useNavigate();
+  axios.defaults.headers.post["Content-Type"] =
+    "application/x-www-form-urlencoded";
+  axios.defaults.withCredentials = false;
 
-  const vplogin = () => {
-    //If user entered correct credentials
-    navigate("../HomePage");
+  const vplogin = (event) => {
+    event.preventDefault();
+
+    console.log("Username:", event.target.username.value);
+    console.log("Password:", event.target.password.value);
+
+    const res = axios
+      .post("http://localhost:8080/api/auth/signin", {
+        username: event.target.username.value,
+        password: event.target.password.value,
+      })
+      .then((response) => {
+        console.log("ACCESS TOKEN: ", response.data.accessToken);
+        //Display different content for different access tokens
+
+        //For default users
+        navigate("../HomePage");
+      })
+      .catch((error) => {
+        if (error.response) {
+          console.log(error.response);
+        }
+      });
   };
 
   const cacc = () => {
@@ -31,7 +55,7 @@ export default function Login() {
       </div>
       <div className="flex-right">
         <h1 className="right-header"> Welcome to UCSD Gym Bros</h1>
-        <form action="http://localhost:8080/api/auth/signup" method="POST">
+        <form onSubmit={vplogin}>
           <label className="form-header" for="username">
             <b>Username or Email:</b>
           </label>
@@ -62,15 +86,12 @@ export default function Login() {
           </p>
           <br />
           <br />
-          <input
-            className="login-button"
-            type="submit"
-            value="Submit"
-            onClick={vplogin}
-          />
+          <button className="login-button" type="submit">
+            Submit
+          </button>
           <input
             className="create-acc-button"
-            type="submit"
+            type="button"
             value="Create Account"
             onClick={cacc}
           />

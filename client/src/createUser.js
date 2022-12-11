@@ -6,10 +6,34 @@ import {
   Route,
   Link,
 } from "react-router-dom";
+import axios from "axios";
 import "./CreateUser.css";
 
 export default function CreateUser() {
   const navigate = useNavigate();
+
+  const newUser = (event) => {
+    event.preventDefault();
+
+    const res = axios
+      .post("http://localhost:8080/api/auth/signup", {
+        username: event.target.username.value,
+        password: event.target.password.value,
+        email: event.target.email.value,
+      })
+      .then((response) => {
+        console.log("Account Creation Successful");
+        //Display different content for different access tokens
+
+        //For default users
+        navigate("../Login");
+      })
+      .catch((error) => {
+        if (error.response) {
+          console.log(error.response);
+        }
+      });
+  };
 
   const cancel = () => {
     //If user entered correct credentials
@@ -19,10 +43,25 @@ export default function CreateUser() {
   return (
     <>
       <div class="background">
-        <form id="createUser" action="action_page.php">
+        <form
+          onSubmit={newUser}
+          id="createUser"
+          //          action="http://localhost:8080/api/auth/signup"
+          //          method="POST"
+        >
           <div class="container" />
           <h1>Sign Up</h1>
           <hr />
+          <label for="userName">
+            <b>User Name</b>
+          </label>
+          <input
+            type="text"
+            placeholder="Enter User Name"
+            name="username"
+            required
+          />{" "}
+          <br />
           <label for="firstName">
             <b>First Name</b>
           </label>
@@ -54,28 +93,28 @@ export default function CreateUser() {
           </label>
           <input type="text" placeholder="Enter Email" name="email" required />{" "}
           <br />
-          <label for="psw">
+          <label for="password">
             <b>Password</b>
           </label>
           <input
             type="password"
             placeholder="Enter Password"
-            name="psw"
+            name="password"
             required
           />{" "}
           <br />
-          <label for="psw-repeat">
+          <label for="passwordRepeat">
             <b>Repeat Password</b>
           </label>
           <input
             type="password"
             placeholder="Repeat Password"
-            name="psw-repeat"
+            name="passwordRepeat"
             required
           />{" "}
           <br />
           <div class="clearfix">
-            <button type="button" class="cancelbtn" onClick={cancel}>
+            <button type="button" class="cancelbtn">
               Cancel
             </button>
             <button type="submit" class="signupbtn">

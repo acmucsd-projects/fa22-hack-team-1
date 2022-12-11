@@ -4,11 +4,16 @@ const dbConfig = require("./app/config/db.config.js");
 
 const app = express();
 
-var corsOptions = {
-  origin: "http://localhost:8081"
-};
+app.use(function (req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
+});
 
-app.use(cors(corsOptions));
+//app.use(cors(corsOptions));
 
 // parse requests of content-type - application/json
 app.use(express.json());
@@ -22,25 +27,26 @@ const Role = db.role;
 db.mongoose
   .connect(dbConfig.DB_URL, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
   })
   .then(() => {
     console.log("Successfully connect to MongoDB.");
     initial();
   })
-  .catch(err => {
+  .catch((err) => {
     console.error("Connection error", err);
     process.exit();
   });
 
 // simple route
 app.get("/", (req, res) => {
+  res.header("Access-Control-Allow-Origin", "*");
   res.json({ message: "Hello World!" });
 });
 
 // routes
-require('./app/routes/auth.routes')(app);
-require('./app/routes/user.routes')(app);
+require("./app/routes/auth.routes")(app);
+require("./app/routes/user.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;
@@ -52,8 +58,8 @@ function initial() {
   Role.estimatedDocumentCount((err, count) => {
     if (!err && count === 0) {
       new Role({
-        name: "user"
-      }).save(err => {
+        name: "user",
+      }).save((err) => {
         if (err) {
           console.log("error", err);
         }
@@ -62,8 +68,8 @@ function initial() {
       });
 
       new Role({
-        name: "moderator"
-      }).save(err => {
+        name: "moderator",
+      }).save((err) => {
         if (err) {
           console.log("error", err);
         }
@@ -72,8 +78,8 @@ function initial() {
       });
 
       new Role({
-        name: "admin"
-      }).save(err => {
+        name: "admin",
+      }).save((err) => {
         if (err) {
           console.log("error", err);
         }
