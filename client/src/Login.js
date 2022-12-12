@@ -1,3 +1,38 @@
+/**
+ * ToDo:
+ *
+ *   Workout Log:
+ *      In user database, store date that exercises are added to routine
+ *      Display dates and workout name (other info?) on Workout History page
+ *
+ *   Workout Layout:
+ *      (To be done at the end)
+ *
+ *      Sample Layout:
+ *        Squat: 5 sets, 5 reps each set
+ *        Bench Press: 5 sets, 5 reps each set
+ *        Deadlift: 5 sets, 5 reps each set
+ *
+ *   Home Page:
+ *      Things to visualize on the page:
+ *        In-Progress Workout
+ *        Personal Stats (Entered During Account Creation)
+ *
+ *   New Pages to Make:
+ *      Start Workout Page
+ *      Self-Report Workout Results Page
+ *      Log of User Workout History
+ *
+ *  TODO: 12/10
+ *    Ali: Working on beginner, medium, difficult workout templates, putting in database
+ *    Evan: Working on displaying workout info for dummy values, waiting on Ali
+ *
+ *    Finalize Meeting Times
+ *      Saturday at 4 pm
+ *      Wednesday at 12 pm
+ *
+ */
+
 import React, { Component } from "react";
 import {
   BrowserRouter as Router,
@@ -8,6 +43,8 @@ import {
 } from "react-router-dom";
 import axios from "axios";
 import "./Login.css";
+
+import rec from "./images/rec.png";
 
 export default function Login() {
   const navigate = useNavigate();
@@ -31,7 +68,9 @@ export default function Login() {
         //Display different content for different access tokens
 
         //For default users
-        navigate("../HomePage");
+        navigate("../HomePage", {
+          state: { username: event.target.username.value },
+        });
       })
       .catch((error) => {
         if (error.response) {
@@ -49,7 +88,7 @@ export default function Login() {
       <div className="flex-left">
         <img
           className="image-main"
-          src={require("./images/rec.png")}
+          src={rec}
           alt="You'll Just Have to Imagine the Fire"
         />
       </div>
