@@ -30,10 +30,19 @@ export default function HomePage() {
         <a>Account Settings</a>
       </div>
       <div className="flex-main1">
-        <div className="flex-top">
-          <p>Hello</p>
+        <div className="flex-left" >
+          <h4 className = "WorkoutTitle" >Today's Workout </h4>
+          <h1 className = "SplitDay">Upper Body</h1>
+          <p>Chest: Exercise(s) 1</p>
+          <p>Back: Exercise(s) 2</p>
+          <p>Shoulders: Exercise(s) 3</p>
+          <p>Triceps: Exercise(s) 4</p>
+          <p>Biceps: Exercise(s) 5</p>
         </div>
-        <div className="flex-bot"></div>
+        <div className="flex-right">
+          <p className = "WorkoutTitle"> Activity Tracker</p>
+          
+        </div>
       </div>
     </div>
   );
