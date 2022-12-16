@@ -38,6 +38,21 @@ const exerciseSchema = new mongoose.Schema(
             type: String,
             required: false,
         },
+        //to be recorded for workout history
+        sets: {
+            type: Number,
+            required: false,
+        },
+        //array of length(sets) where reps[0] is reps for first set, etc.
+        reps: {
+            type: Array,
+            required: false,
+        },
+        //rate of perceived exertion
+        rpe: {
+            type: Number,
+            required: false,
+        }
     }
 )
 module.exports = mongoose.model('exercise.model', exerciseSchema, 'exercises');
