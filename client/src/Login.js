@@ -84,15 +84,15 @@ export default function Login() {
   };
 
   return (
-    <div className="flex-main">
-      <div className="flex-left">
+    <div className="flex-main-login">
+      <div className="flex-left-login">
         <img
           className="image-main"
           src={rec}
           alt="You'll Just Have to Imagine the Fire"
         />
       </div>
-      <div className="flex-right">
+      <div className="flex-right-login">
         <h1 className="right-header"> Welcome to UCSD Gym Bros</h1>
         <form onSubmit={vplogin}>
           <label className="form-header" for="username">

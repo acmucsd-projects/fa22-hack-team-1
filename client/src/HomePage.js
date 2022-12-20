@@ -1,6 +1,6 @@
 import React, { Component, createContext } from "react";
 import { useLocation } from "react-router-dom";
-import "./homePage.css";
+import "./HomePage.css";
 import axios from "axios";
 export default function HomePage() {
   const { state } = useLocation();
@@ -26,22 +26,23 @@ export default function HomePage() {
       <div className="topnav">
         <a className="active">Home</a>
         <a>Stats</a>
-        <a>Plans</a>
-        <a>Account Settings</a>
+        <a>Plan</a>
+        <a href="http://localhost:3000/WorkHist" user={username}>
+          Activity History
+        </a>
       </div>
-      <div className="flex-main1">
-        <div className="flex-left1" >
-          <h4 className = "WorkoutTitle" >Today's Workout </h4>
-          <h1 className = "SplitDay">Upper Body</h1>
+      <div className="flex-main-home">
+        <div className="flex-left-home">
+          <h4 className="WorkoutTitle">Today's Workout </h4>
+          <h1 className="SplitDay">Upper Body</h1>
           <p>Chest: Exercise(s) 1</p>
           <p>Back: Exercise(s) 2</p>
           <p>Shoulders: Exercise(s) 3</p>
           <p>Triceps: Exercise(s) 4</p>
           <p>Biceps: Exercise(s) 5</p>
         </div>
-        <div className="flex-right1">
-          <p className = "WorkoutTitle"> Activity Tracker</p>
-          
+        <div className="flex-right-home">
+          <p className="WorkoutTitle"> Activity Tracker</p>
         </div>
       </div>
     </div>
