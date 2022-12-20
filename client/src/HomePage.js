@@ -30,7 +30,7 @@ export default function HomePage() {
         <a>Account Settings</a>
       </div>
       <div className="flex-main1">
-        <div className="flex-left" >
+        <div className="flex-left1" >
           <h4 className = "WorkoutTitle" >Today's Workout </h4>
           <h1 className = "SplitDay">Upper Body</h1>
           <p>Chest: Exercise(s) 1</p>
@@ -39,7 +39,7 @@ export default function HomePage() {
           <p>Triceps: Exercise(s) 4</p>
           <p>Biceps: Exercise(s) 5</p>
         </div>
-        <div className="flex-right">
+        <div className="flex-right1">
           <p className = "WorkoutTitle"> Activity Tracker</p>
           
         </div>
