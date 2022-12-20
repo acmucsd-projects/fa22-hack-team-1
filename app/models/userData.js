@@ -45,7 +45,11 @@ var userDataSchema = new mongoose.Schema(
               type: mongoose.Schema.Types.ObjectId,
               ref: "Role"
             }
-          ]
+          ],
+        history: {
+            type: Array,
+            required: false,
+        }
     }
 )
 
