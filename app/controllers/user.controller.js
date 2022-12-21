@@ -35,3 +35,34 @@ exports.updatePassword = (req, res) => {
 
   res.send({ message: "Password updated!" });
 };
+
+exports.updateWeight = (req, res) => {
+  User.findOne ({
+    username: req.body.username,
+  }).exec ((err, user) => {
+    if (err) {
+      res.status (500).send ({message: err});
+      return;
+    }
+    user.weight = req.body.weight;
+    user.save ();
+  });
+
+  res.send ({message: 'Stats updated!'});
+};
+
+exports.updateHeight = (req, res) => {
+  User.findOne ({
+    username: req.body.username,
+  }).exec ((err, user) => {
+    if (err) {
+      res.status (500).send ({message: err});
+      return;
+    }
+    user.height = req.body.height;
+    user.save ();
+  });
+
+  res.send ({message: 'Stats updated!'});
+};
+
