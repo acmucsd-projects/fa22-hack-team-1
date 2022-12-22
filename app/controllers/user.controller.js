@@ -1,4 +1,5 @@
 const db = require("../models");
+const Plans = db.plan;
 const User = db.user;
 const Role = db.role;
 const Workout = db.workout;
@@ -54,39 +55,49 @@ exports.logWorkout = (req, res) => {
     if (err) {
       res.status(500).send({ message: err });
       return;
-    }
-    else {
+    } else {
       res.send({ message: "Workout logged." });
-    };
+    }
   });
 
   exports.updateWeight = (req, res) => {
-    User.findOne ({
+    User.findOne({
       username: req.body.username,
-    }).exec ((err, user) => {
+    }).exec((err, user) => {
       if (err) {
-        res.status (500).send ({message: err});
+        res.status(500).send({ message: err });
         return;
       }
       user.weight = req.body.weight;
-      user.save ();
+      user.save();
     });
-  
-    res.send ({message: 'Stats updated!'});
+
+    res.send({ message: "Stats updated!" });
   };
-  
+
   exports.updateHeight = (req, res) => {
-    User.findOne ({
+    User.findOne({
       username: req.body.username,
-    }).exec ((err, user) => {
+    }).exec((err, user) => {
       if (err) {
-        res.status (500).send ({message: err});
+        res.status(500).send({ message: err });
         return;
       }
       user.height = req.body.height;
-      user.save ();
+      user.save();
     });
-  
-    res.send ({message: 'Stats updated!'});
+
+    res.send({ message: "Stats updated!" });
   };
+};
+
+exports.getPlan = (req, res) => {
+  console.log(req.body.Difficulty);
+  Plans.findOne({ Difficulty: req.body.Difficulty }, function (err, docs) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("Result : ", docs[0]);
+    }
+  });
 };
