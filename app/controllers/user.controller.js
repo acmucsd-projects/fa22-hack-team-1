@@ -1,6 +1,7 @@
 const db = require("../models");
 const User = db.user;
 const Role = db.role;
+const Workout = db.workout;
 
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
@@ -36,33 +37,56 @@ exports.updatePassword = (req, res) => {
   res.send({ message: "Password updated!" });
 };
 
-exports.updateWeight = (req, res) => {
-  User.findOne ({
-    username: req.body.username,
-  }).exec ((err, user) => {
-    if (err) {
-      res.status (500).send ({message: err});
-      return;
-    }
-    user.weight = req.body.weight;
-    user.save ();
+exports.logWorkout = (req, res) => {
+  const workout = new Workout({
+    user: req.body.user,
+    date: req.body.date,
+    exerciseName: req.body.exerciseName,
+    sets: req.body.sets,
+    reps: req.body.reps,
+    //rpe: req.body.rpe,
+    weight: req.body.weight,
+    muscleGroup: req.body.muscleGroup,
+    workoutCategory: req.body.muscleCategory,
   });
 
-  res.send ({message: 'Stats updated!'});
-};
-
-exports.updateHeight = (req, res) => {
-  User.findOne ({
-    username: req.body.username,
-  }).exec ((err, user) => {
+  workout.save((err, workout) => {
     if (err) {
-      res.status (500).send ({message: err});
+      res.status(500).send({ message: err });
       return;
     }
-    user.height = req.body.height;
-    user.save ();
+    else {
+      res.send({ message: "Workout logged." });
+    };
   });
 
-  res.send ({message: 'Stats updated!'});
+  exports.updateWeight = (req, res) => {
+    User.findOne ({
+      username: req.body.username,
+    }).exec ((err, user) => {
+      if (err) {
+        res.status (500).send ({message: err});
+        return;
+      }
+      user.weight = req.body.weight;
+      user.save ();
+    });
+  
+    res.send ({message: 'Stats updated!'});
+  };
+  
+  exports.updateHeight = (req, res) => {
+    User.findOne ({
+      username: req.body.username,
+    }).exec ((err, user) => {
+      if (err) {
+        res.status (500).send ({message: err});
+        return;
+      }
+      user.height = req.body.height;
+      user.save ();
+    });
+  
+    res.send ({message: 'Stats updated!'});
+  };
 };
-

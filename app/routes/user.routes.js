@@ -28,4 +28,6 @@ module.exports = function(app) {
   
   app.put("/api/test/update", controller.updatePassword);
 
+  app.post("/api/test/logworkout", controller.logWorkout);
+
 };
