@@ -18,11 +18,11 @@ import axios from "axios";
 const getPlan = (event) => {
   const res = axios
     .post("http://localhost:8080/api/test/getplan", {
-      Difficulty: "Intermediate",
+      Difficulty: "Easy",
     })
     .then((response) => {
       console.log("Success!");
-      console.log(response);
+      console.log(response.data.message);
     })
     .catch((error) => {
       if (error.response) {

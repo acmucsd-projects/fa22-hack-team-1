@@ -92,12 +92,12 @@ exports.logWorkout = (req, res) => {
 };
 
 exports.getPlan = (req, res) => {
-  console.log(req.body.Difficulty);
   Plans.findOne({ Difficulty: req.body.Difficulty }, function (err, docs) {
     if (err) {
-      console.log(err);
+      res.status(500).send({ message: err });
+      return;
     } else {
-      console.log("Result : ", docs[0]);
+      res.send({ message: docs.Exercises });
     }
   });
 };
