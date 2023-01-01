@@ -9,6 +9,7 @@ db.user = require("./userData");
 db.role = require("./role.model");
 db.workout = require("./completedWorkouts");
 db.plan = require("./plans");
+db.hist = require("./hist");
 
 db.ROLES = ["user", "admin", "moderator"];
 

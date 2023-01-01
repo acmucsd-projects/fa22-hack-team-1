@@ -31,4 +31,6 @@ module.exports = function (app) {
   app.post("/api/test/logworkout", controller.logWorkout);
 
   app.post("/api/test/getplan", controller.getPlan);
+
+  app.post("/api/test/gethist", controller.getHist);
 };

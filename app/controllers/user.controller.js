@@ -1,4 +1,5 @@
 const db = require("../models");
+const Hist = db.hist;
 const Plans = db.plan;
 const User = db.user;
 const Role = db.role;
@@ -98,6 +99,17 @@ exports.getPlan = (req, res) => {
       return;
     } else {
       res.send({ message: docs.Exercises });
+    }
+  });
+};
+
+exports.getHist = (req, res) => {
+  Hist.find({ user: req.body.user }, function (err, docs) {
+    if (err) {
+      res.status(500).send({ message: err });
+      return;
+    } else {
+      res.send({ message: docs });
     }
   });
 };

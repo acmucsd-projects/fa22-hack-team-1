@@ -1,10 +1,27 @@
 import React, { Component, createContext } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./HomePage.css";
 import axios from "axios";
+
+/**
+ *
+ * STATS PAGE IDEAS:
+ *
+ * 1. Display a graph of the user's progress over time
+ * 2. Display a graph of the user's progress over time for each muscle group
+ *
+ */
+
 export default function HomePage() {
   const { state } = useLocation();
   const { username } = state;
+  const navigate = useNavigate();
+
+  const whist = () => {
+    navigate("../WorkHist", {
+      state: { username: username },
+    });
+  };
 
   const getResponse = (event) => {
     const res = axios
@@ -21,15 +38,17 @@ export default function HomePage() {
       });
   };
 
+  /**
+   * Stats page deprecated
+   */
+
   return (
     <div>
       <div className="topnav">
         <a className="active">Home</a>
         <a>Stats</a>
         <a>Plan</a>
-        <a href="http://localhost:3000/WorkHist" user={username}>
-          Activity History
-        </a>
+        <a onClick={whist}>Activity History</a>
       </div>
       <div className="flex-main-home">
         <div className="flex-left-home">

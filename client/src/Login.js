@@ -48,8 +48,10 @@ import rec from "./images/rec.png";
 
 export default function Login() {
   const navigate = useNavigate();
+
   axios.defaults.headers.post["Content-Type"] =
     "application/x-www-form-urlencoded";
+
   axios.defaults.withCredentials = false;
 
   const vplogin = (event) => {
@@ -126,7 +128,7 @@ export default function Login() {
           <br />
           <br />
           <button className="login-button" type="submit">
-            Submit
+            Login
           </button>
           <input
             className="create-acc-button"
