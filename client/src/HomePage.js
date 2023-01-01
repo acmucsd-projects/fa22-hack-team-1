@@ -23,6 +23,10 @@ export default function HomePage() {
     });
   };
 
+  const handleClick = (event) => {
+    event.currentTarget.disabled = true;
+  };
+
   const getResponse = (event) => {
     const res = axios
       .post("http://localhost:8080/api/auth/signin", {
@@ -62,6 +66,263 @@ export default function HomePage() {
         </div>
         <div className="flex-right-home">
           <p className="WorkoutTitle"> Activity Tracker</p>
+          <table class="table table-borderless">
+            <thead>
+              <tr>
+                <th scope="col">Exercise</th>
+                <th scope="col">Set 1</th>
+                <th scope="col">Set 2</th>
+                <th scope="col">Set 3</th>
+                <th scope="col">Set 4</th>
+                <th scope="col">Set 5</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Exercise 1</th>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onClick={handleClick}
+                  >
+                    1
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onClick={handleClick}
+                  >
+                    2
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onClick={handleClick}
+                  >
+                    3
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onClick={handleClick}
+                  >
+                    4
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onClick={handleClick}
+                  >
+                    5
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Exercise 2</th>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onClick={handleClick}
+                  >
+                    1
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onClick={handleClick}
+                  >
+                    2
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onClick={handleClick}
+                  >
+                    3
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onClick={handleClick}
+                  >
+                    4
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onClick={handleClick}
+                  >
+                    5
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Exercise 3</th>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onClick={handleClick}
+                  >
+                    1
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onClick={handleClick}
+                  >
+                    2
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onClick={handleClick}
+                  >
+                    3
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onClick={handleClick}
+                  >
+                    4
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onClick={handleClick}
+                  >
+                    5
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Exercise 4</th>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onClick={handleClick}
+                  >
+                    1
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onClick={handleClick}
+                  >
+                    2
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onClick={handleClick}
+                  >
+                    3
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onClick={handleClick}
+                  >
+                    4
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onClick={handleClick}
+                  >
+                    5
+                  </button>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Exercise 5</th>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onClick={handleClick}
+                  >
+                    1
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onClick={handleClick}
+                  >
+                    2
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onClick={handleClick}
+                  >
+                    3
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onClick={handleClick}
+                  >
+                    4
+                  </button>
+                </td>
+                <td>
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onClick={handleClick}
+                  >
+                    5
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button type="button" class="btn btn-primary">
+            Finish
+          </button>
         </div>
       </div>
     </div>
