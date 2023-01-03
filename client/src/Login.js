@@ -85,6 +85,22 @@ export default function Login() {
     navigate("../CreateUser");
   };
 
+  const getHist = (event) => {
+    const res = axios
+      .post("http://localhost:8080/api/test/getHist", {
+        user: "a",
+      })
+      .then((response) => {
+        console.log("Success!");
+        console.log(response.data.message);
+      })
+      .catch((error) => {
+        if (error.response) {
+          console.log(error.response);
+        }
+      });
+  };
+
   return (
     <div className="flex-main-login">
       <div className="flex-left-login">

@@ -2,6 +2,7 @@ import React, { Component, createContext } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import "./HomePage.css";
 import axios from "axios";
+//import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 /**
  *
@@ -23,10 +24,6 @@ export default function HomePage() {
     });
   };
 
-  const handleClick = (event) => {
-    event.currentTarget.disabled = true;
-  };
-
   const getResponse = (event) => {
     const res = axios
       .post("http://localhost:8080/api/auth/signin", {
@@ -42,9 +39,9 @@ export default function HomePage() {
       });
   };
 
-  /**
-   * Stats page deprecated
-   */
+  const handleClick = (event) => {
+    event.currentTarget.disabled = true;
+  };
 
   return (
     <div>
