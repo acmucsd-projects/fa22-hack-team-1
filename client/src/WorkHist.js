@@ -6,7 +6,13 @@
  *
  */
 
-import React, { Component, createContext } from "react";
+import React, {
+  Component,
+  createContext,
+  useEffect,
+  useState,
+  setState,
+} from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 
@@ -15,8 +21,10 @@ import triton from "./images/triton.png";
 import "./WorkHist.css";
 
 export default function WorkHist() {
+  const [isLoading, setLoading] = useState(true);
+  const [exercises, setExercises] = useState([]);
+
   const { state } = useLocation();
-  //const { username } = state;
   const username = state.username;
   const navigate = useNavigate();
 
@@ -26,18 +34,52 @@ export default function WorkHist() {
     });
   };
 
-  const res = axios
-    .post("http://localhost:8080/api/test/getHist", {
-      user: String(username),
-    })
-    .then((response) => {
-      console.log(response.data.message);
-    })
-    .catch((error) => {
-      if (error.response) {
-        console.log(error.response.data);
-      }
-    });
+  useEffect(() => {
+    const res = axios
+      .post("http://localhost:8080/api/test/getHist", {
+        user: String(username),
+      })
+      .then((response) => {
+        console.log(response.data.message);
+        setLoading(false);
+        setExercises(response.data.message);
+      })
+      .catch((error) => {
+        if (error.response) {
+          console.log(error.response.data);
+        }
+      });
+  }, []);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  exercises.sort(function (a, b) {
+    var d = a.date.replaceAll("/", "-");
+    var date = d.split("-");
+    var f = new Date(date[2], date[0] - 1, date[1]);
+    //console.log(f.toString());
+
+    var d2 = b.date.replaceAll("/", "-");
+    var date2 = d2.split("-");
+    var f2 = new Date(date2[2], date2[0] - 1, date2[1]);
+    //console.log(f2.toString());
+
+    return f2 - f;
+  });
+
+  const exerciseList = exercises.map((exercise) => (
+    <Exercise
+      key={exercise._id}
+      date={exercise.date}
+      exerciseName={exercise.exerciseName}
+      muscleGroup={exercise.muscleGroup}
+      reps={exercise.reps}
+      sets={exercise.sets}
+      weight={exercise.weight}
+    />
+  ));
 
   return (
     <div>
@@ -54,7 +96,8 @@ export default function WorkHist() {
           alt="You'll Just Have to Imagine the Fire"
         />
         <h1>Activity History</h1>
-        <Exercise />
+        <div className="divider"></div>
+        <div>{exerciseList}</div>
       </div>
     </div>
   );

@@ -1,0 +1,20 @@
+.main-container {
+  margin: 40px;
+  padding-bottom: 40px;
+  width: 800px;
+  background-color: white;
+  text-align: center;
+  border-radius: 15px;
+}
+
+.date-text {
+  font-size: 20px;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.main-text {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}

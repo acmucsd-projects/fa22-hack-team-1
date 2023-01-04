@@ -77,6 +77,7 @@ export default function Login() {
       .catch((error) => {
         if (error.response) {
           console.log(error.response);
+          alert("Invalid username or password");
         }
       });
   };
