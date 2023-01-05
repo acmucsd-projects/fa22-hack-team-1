@@ -15,7 +15,7 @@
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: rgb(24, 67, 206);
+  background-color: #0047AB;
   color: black;
 }
 
@@ -37,7 +37,7 @@
 
   align-self: center;
   flex-direction: column;
-  border: 10px solid rgb(0, 208, 255);
+  border: 5px solid rgb(255, 213, 0);
   background-color: rgb(255, 255, 255);
 }
 
@@ -61,7 +61,7 @@
 }
 .flex-main-home {
   display: flex;
-  background-color: #00f7ff;
+  background-color: #0047AB;
   width: 100%;
   height: 100vh;
 }
@@ -77,6 +77,6 @@
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   align-self: center;
   flex-direction: column;
-  border: 10px solid rgb(0, 208, 255);
+  border: 5px solid rgb(255, 213, 0);
   background-color: rgb(255, 255, 255);
 }

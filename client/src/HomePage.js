@@ -24,6 +24,18 @@ export default function HomePage() {
     });
   };
 
+  const plans = () => {
+    navigate("../Plans", {
+      state: { username: username },
+    });
+  };
+
+  const stats = () => {
+    navigate("../Stats", {
+      state: { username: username },
+    });
+  };
+
   const getResponse = (event) => {
     const res = axios
       .post("http://localhost:8080/api/auth/signin", {
@@ -47,8 +59,8 @@ export default function HomePage() {
     <div>
       <div className="topnav">
         <a className="active">Home</a>
-        <a>Stats</a>
-        <a>Plan</a>
+        <a onClick = {stats}>Stats</a>
+        <a onClick = {plans}>Plan</a>
         <a onClick={whist}>Activity History</a>
       </div>
       <div className="flex-main-home">

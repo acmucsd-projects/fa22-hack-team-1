@@ -1,0 +1,85 @@
+.topnav {
+    background-color: rgba(26, 23, 23, 0);
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: right;
+    color: #000000;
+    text-align: center;
+    padding: 16px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: rgb(24, 67, 206);
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: #00fbff;
+    color: #ffffff;
+  }
+.flex-title-plans{
+    display: flex;
+    background-color: #00f7ff;
+    width: 100%;
+    height: 100vh;
+    
+}
+.flex-main-plans {
+    display: flex;
+    background-color: #0047AB;
+    width: 100%;
+    height: 100vh;
+  }
+
+.flex-left-plans{
+    height: 600px;
+    width: 400px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 25px;
+    border-radius: 15px;
+    row-gap: 0px;
+    padding: 10px;
+
+    align-self: center;
+    flex-direction: column;
+    border: 5px solid rgb(255, 213, 0);
+    background-color: rgb(255, 255, 255);
+}
+.flex-mid-plans{
+    height: 600px;
+    width: 400px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 100px;
+    border-radius: 15px;
+    row-gap: 0px;
+    padding: 10px;
+
+    align-self: center;
+    flex-direction: column;
+    border: 5px solid rgb(255, 213, 0);
+    background-color: rgb(255, 255, 255);
+}
+.flex-right-plans{
+    height: 600px;
+    width: 400px;
+    margin-top: 0px;
+    margin-right: 0px;
+    margin-left: 100px;
+    border-radius: 15px;
+    row-gap: 0px;
+    padding: 10px;
+
+    align-self: center;
+    flex-direction: column;
+    border: 5px solid rgb(255, 213, 0);
+    background-color: rgb(255, 255, 255);
+}

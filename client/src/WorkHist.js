@@ -34,6 +34,24 @@ export default function WorkHist() {
     });
   };
 
+  const whist = () => {
+    navigate("../WorkHist", {
+      state: { username: username },
+    });
+  };
+
+  const plans = () => {
+    navigate("../Plans", {
+      state: { username: username },
+    });
+  };
+
+  const stats = () => {
+    navigate("../Stats", {
+      state: { username: username },
+    });
+  };
+
   useEffect(() => {
     const res = axios
       .post("http://localhost:8080/api/test/getHist", {
@@ -85,8 +103,8 @@ export default function WorkHist() {
     <div>
       <div className="topnav">
         <a onClick={home}>Home</a>
-        <a>Stats</a>
-        <a>Plan</a>
+        <a onClick ={stats}>Stats</a>
+        <a onClick = {plans}>Plan</a>
         <a className="active">Activity History</a>
       </div>
       <div className="flex-main-wh">

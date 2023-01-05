@@ -5,6 +5,8 @@ import Login from "./Login";
 import HomePage from "./HomePage";
 import CreateUser from "./CreateUser";
 import WorkHist from "./WorkHist";
+import Plans from "./Plans";
+import Stats from "./Stats";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Route exact path="/Homepage" element={<HomePage />} />
         <Route exact path="/CreateUser" element={<CreateUser />} />
         <Route exact path="/WorkHist" element={<WorkHist />} />
+        <Route exact path = "/Plans" element = {<Plans/>}/>
+        <Route exact path = "/Stats" element = {<Stats/>}/>
       </Routes>
     </Router>
   );
