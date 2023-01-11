@@ -114,7 +114,7 @@ export default function CreateUser() {
           />{" "}
           <br />
           <div class="clearfix">
-            <button type="button" class="cancelbtn">
+            <button type="button" onClick={cancel} class="cancelbtn">
               Cancel
             </button>
             <button type="submit" class="signupbtn">

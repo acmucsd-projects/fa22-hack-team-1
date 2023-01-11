@@ -32,5 +32,13 @@ module.exports = function (app) {
 
   app.post("/api/test/getplan", controller.getPlan);
 
+  app.post("/api/test/addcurrentplan", controller.addCurrentPlan);
+
+  app.put("/api/test/updateplan", controller.updatePlan);
+
   app.post("/api/test/gethist", controller.getHist);
+
+  app.put("/api/test/updatepart", controller.updatePart);
+
+  app.post("/api/test/getinfo", controller.getInfo);
 };

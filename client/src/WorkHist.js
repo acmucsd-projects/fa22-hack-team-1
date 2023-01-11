@@ -26,28 +26,11 @@ export default function WorkHist() {
 
   const { state } = useLocation();
   const username = state.username;
+  //const username = state.username.concat("!");
   const navigate = useNavigate();
 
   const home = () => {
     navigate("../Homepage", {
-      state: { username: username },
-    });
-  };
-
-  const whist = () => {
-    navigate("../WorkHist", {
-      state: { username: username },
-    });
-  };
-
-  const plans = () => {
-    navigate("../Plans", {
-      state: { username: username },
-    });
-  };
-
-  const stats = () => {
-    navigate("../Stats", {
       state: { username: username },
     });
   };
@@ -99,12 +82,50 @@ export default function WorkHist() {
     />
   ));
 
+  if (exerciseList.length == 0) {
+    return (
+      <div>
+        <div className="topnav">
+          <a onClick={home}>Home</a>
+          <a>Stats</a>
+          <a>Plan</a>
+          <a className="active">Activity History</a>
+        </div>
+        <div className="flex-main-wh">
+          <img
+            className="triton-img"
+            src={triton}
+            alt="You'll Just Have to Imagine the Fire"
+          />
+          <h1>Activity History</h1>
+          <div className="divider"></div>
+          <div>No History to Show</div>
+        </div>
+      </div>
+    );
+  }
+
+  console.log("username: " + username);
+
+  const res = axios
+    .post("http://localhost:8080/api/test/getInfo", {
+      user: String(username),
+    })
+    .then((response) => {
+      console.log(response.data.message);
+    })
+    .catch((error) => {
+      if (error.response) {
+        console.log(error.response.data);
+      }
+    });
+
   return (
     <div>
       <div className="topnav">
         <a onClick={home}>Home</a>
-        <a onClick ={stats}>Stats</a>
-        <a onClick = {plans}>Plan</a>
+        <a>Stats</a>
+        <a>Plan</a>
         <a className="active">Activity History</a>
       </div>
       <div className="flex-main-wh">

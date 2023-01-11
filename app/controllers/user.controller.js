@@ -113,3 +113,65 @@ exports.getHist = (req, res) => {
     }
   });
 };
+
+exports.getInfo = (req, res) => {
+  User.findOne({ username: req.body.user }, function (err, docs) {
+    if (err) {
+      res.status(500).send({ message: err });
+      return;
+    } else {
+      res.send({ message: docs });
+    }
+  });
+};
+
+exports.addCurrentPlan = (req, res) => {
+  const currworkout = new CurrentWorkout({
+    user: req.body.user,
+    plan: req.body.plan,
+    part: req.body.part,
+  });
+
+  currworkout.save((err, currworkout) => {
+    if (err) {
+      res.status(500).send({ message: err });
+      return;
+    } else {
+      res.send({ message: "Current workout added." });
+    }
+  });
+};
+
+exports.updatePlan = (req, res) => {
+  CurrentWorkout.findOne({
+    user: req.body.user,
+  }).exec((err, user) => {
+    if (err) {
+      res.status(500).send({ message: err });
+      return;
+    }
+    user.plan = req.body.plan;
+    user.save();
+  });
+
+  res.send({ message: "Plan updated!" });
+};
+
+//cycle part of workout based on difficulty
+exports.updatePart = (req, res) => {
+  CurrentWorkout.findOne({ user: req.body.user }, function (err, docs) {
+    if (err) {
+      res.status(500).send({ message: err });
+      return;
+    } else {
+      //res.send({ message: docs.part+1 });
+      if ((docs.plan = "Easy")) {
+        docs.part = (docs.part + 1) % 2;
+      } else {
+        docs.part = (docs.part + 1) % 3;
+      }
+      docs.save();
+    }
+    res.send({ message: "Part updated!" });
+  });
+};
