@@ -7,6 +7,7 @@ import CreateUser from "./CreateUser";
 import WorkHist from "./WorkHist";
 import Plans from "./Plans";
 import Stats from "./Stats";
+import Record from "./Record";
 
 function App() {
   return (
@@ -17,8 +18,9 @@ function App() {
         <Route exact path="/Homepage" element={<HomePage />} />
         <Route exact path="/CreateUser" element={<CreateUser />} />
         <Route exact path="/WorkHist" element={<WorkHist />} />
-        <Route exact path = "/Plans" element = {<Plans/>}/>
-        <Route exact path = "/Stats" element = {<Stats/>}/>
+        <Route exact path="/Plans" element={<Plans />} />
+        <Route exact path="/Stats" element={<Stats />} />
+        <Route exact path="/Record" element={<Record />} />
       </Routes>
     </Router>
   );

@@ -26,11 +26,16 @@ export default function WorkHist() {
 
   const { state } = useLocation();
   const username = state.username;
-  //const username = state.username.concat("!");
   const navigate = useNavigate();
 
   const home = () => {
     navigate("../Homepage", {
+      state: { username: username },
+    });
+  };
+
+  const record = () => {
+    navigate("../Record", {
       state: { username: username },
     });
   };
@@ -105,8 +110,6 @@ export default function WorkHist() {
     );
   }
 
-  console.log("username: " + username);
-
   const res = axios
     .post("http://localhost:8080/api/test/getInfo", {
       user: String(username),
@@ -135,6 +138,9 @@ export default function WorkHist() {
           alt="You'll Just Have to Imagine the Fire"
         />
         <h1>Activity History</h1>
+        <button onClick={record} className="record-btn">
+          Record Custom Exercise
+        </button>
         <div className="divider"></div>
         <div>{exerciseList}</div>
       </div>

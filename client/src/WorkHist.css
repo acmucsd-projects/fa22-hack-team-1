@@ -48,3 +48,15 @@
   margin-top: 20px;
   margin-bottom: 50px;
 }
+
+.record-btn {
+  width: 200px;
+  height: 50px;
+  font-size: small;
+}
+
+.delete-btn {
+  width: 200px;
+  height: 50px;
+  font-size: small;
+}
