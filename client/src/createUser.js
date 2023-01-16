@@ -20,6 +20,9 @@ export default function CreateUser() {
         username: event.target.username.value,
         password: event.target.password.value,
         email: event.target.email.value,
+        firstName: event.target.firstName.value,
+        lastName: event.target.lastName.value,
+        birthday: event.target.birthday.value
       })
       .then((response) => {
         console.log("Account Creation Successful");

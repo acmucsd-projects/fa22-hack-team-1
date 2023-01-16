@@ -35,6 +35,7 @@ export default function Stats() {
       const res = axios
     .post("http://localhost:8080/api/test/getInfo", {
       user: String(username),
+      
     })
     .then((response) => {
       console.log(response.data.message);
@@ -54,6 +55,12 @@ export default function Stats() {
                 <a onClick={whist}>Activity History</a>
             </div>
             <div className = "flex-main-stats">
+              <div className ="flex-box-stats">
+                <h1>User Stats</h1>
+                <h2>First Name: </h2>
+                <h2>Last Name: </h2>
+                <h2>Email: </h2>
+              </div>
             </div>
         </div>
     );

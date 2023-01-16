@@ -60,7 +60,7 @@ export default function HomePage() {
       <div className="topnav">
         <a className="active">Home</a>
         <a onClick = {stats}>Stats</a>
-        <a onClick = {plans}>Plan</a>
+        <a onClick = {plans}>Plans</a>
         <a onClick={whist}>Activity History</a>
       </div>
       <div className="flex-main-home">
