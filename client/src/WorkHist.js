@@ -39,7 +39,7 @@ export default function WorkHist() {
       state: { username: username },
     });
   };
-  
+
   const plans = () => {
     navigate("../Plans", {
       state: { username: username },
@@ -104,8 +104,8 @@ export default function WorkHist() {
       <div>
         <div className="topnav">
           <a onClick={home}>Home</a>
-          <a onClick = {stats}>Stats</a>
-          <a onClick = {plans}>Plan</a>
+          <a onClick={stats}>Stats</a>
+          <a onClick={plans}>Plan</a>
           <a className="active">Activity History</a>
         </div>
         <div className="flex-main-wh">
@@ -115,6 +115,9 @@ export default function WorkHist() {
             alt="You'll Just Have to Imagine the Fire"
           />
           <h1>Activity History</h1>
+          <button onClick={record} className="record-btn">
+            Record Custom Exercise
+          </button>
           <div className="divider"></div>
           <div>No History to Show</div>
         </div>
@@ -139,8 +142,8 @@ export default function WorkHist() {
     <div>
       <div className="topnav">
         <a onClick={home}>Home</a>
-        <a onClick = {stats}>Stats</a>
-        <a onClick = {plans}>Plan</a>
+        <a onClick={stats}>Stats</a>
+        <a onClick={plans}>Plan</a>
         <a className="active">Activity History</a>
       </div>
       <div className="flex-main-wh">
