@@ -137,11 +137,6 @@ export default function Login() {
             name="password"
           />
           <br />
-          <p>
-            <a className="forgot-pass" href="https://www.w3schools.com/">
-              Forgot Password
-            </a>
-          </p>
           <br />
           <br />
           <button className="login-button" type="submit">

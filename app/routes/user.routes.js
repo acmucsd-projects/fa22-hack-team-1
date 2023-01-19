@@ -34,11 +34,13 @@ module.exports = function (app) {
 
   app.post("/api/test/addcurrentplan", controller.addCurrentPlan);
 
+  app.post("/api/test/getcurrentplan", controller.getCurrentPlan);
+
   app.put("/api/test/updateplan", controller.updatePlan);
 
   app.post("/api/test/gethist", controller.getHist);
 
-  app.put("/api/test/updatepart", controller.updatePart);
+  app.post("/api/test/updatepart", controller.updatePart);
 
   app.post("/api/test/getinfo", controller.getInfo);
 };

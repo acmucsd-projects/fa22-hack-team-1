@@ -75,9 +75,8 @@
 }
 
 .form-input {
-  padding-top: 20px;
-  padding-bottom: 20px;
-  width: 300px;
+  padding: 20px;
+  width: 100%;
   border-radius: 15px;
   outline: black;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;

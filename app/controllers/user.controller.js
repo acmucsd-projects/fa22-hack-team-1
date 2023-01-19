@@ -4,6 +4,7 @@ const Plans = db.plan;
 const User = db.user;
 const Role = db.role;
 const Workout = db.workout;
+const CurrentWorkout = db.currentworkout;
 
 var jwt = require("jsonwebtoken");
 var bcrypt = require("bcryptjs");
@@ -49,7 +50,6 @@ exports.logWorkout = (req, res) => {
     //rpe: req.body.rpe,
     weight: req.body.weight,
     muscleGroup: req.body.muscleGroup,
-    workoutCategory: req.body.muscleCategory,
   });
 
   workout.save((err, workout) => {
@@ -138,6 +138,17 @@ exports.addCurrentPlan = (req, res) => {
       return;
     } else {
       res.send({ message: "Current workout added." });
+    }
+  });
+};
+
+exports.getCurrentPlan = (req, res) => {
+  CurrentWorkout.findOne({ user: req.body.user }, function (err, docs) {
+    if (err) {
+      res.status(500).send({ message: err });
+      return;
+    } else {
+      res.send({ message: docs });
     }
   });
 };
